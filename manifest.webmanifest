@@ -1,0 +1,23 @@
+{
+  "name": "Search & Rescue: Kodiak",
+  "short_name": "SAR Kodiak",
+  "description": "Juego de rescate marítimo en helicóptero ambientado en la Air Station Kodiak de Alaska.",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "theme_color": "#000000",
+  "background_color": "#0a1c2b",
+  "icons": [
+    {
+      "src": "assets/icons/favicon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/apple-touch-icon.png",
+      "sizes": "640x640",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+/* black cover shown only behind the first-run iPhone home-screen tip */
+#devGate{position:fixed;inset:0;z-index:99999;background:#000;color:#fff;overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y;display:flex;padding:max(28px,env(safe-area-inset-top)) 20px max(24px,env(safe-area-inset-bottom));font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-user-select:auto;user-select:auto;transition:opacity .45s ease}
+#devGate.bye{opacity:0}
+#a2hs{position:fixed;inset:0;z-index:2;background:#000;display:flex;overflow-y:auto;padding:max(28px,env(safe-area-inset-top)) 22px max(24px,env(safe-area-inset-bottom));opacity:0;transition:opacity .35s}
+#a2hs.on{opacity:1}
+#a2hs .ah{width:100%;max-width:380px;margin:auto;display:flex;flex-direction:column;gap:22px;text-align:left}
+#a2hs .ah-i{width:84px;height:84px;margin:0 auto;display:block;filter:drop-shadow(0 6px 22px rgba(50,120,255,.35))}
+#a2hs h2{font-size:22px;font-weight:600;line-height:1.25;margin:0;text-align:center}
+#a2hs .ah-p{font-size:15px;line-height:1.5;color:#a8a8a8;margin:-8px 0 0;text-align:center}
+#a2hs ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+#a2hs li{display:flex;align-items:center;gap:14px;background:#111;border:1px solid #232323;border-radius:12px;padding:13px 14px;font-size:15px;line-height:1.35;color:#e6e6e6}
+#a2hs li b{color:#fff}
+#a2hs .n{flex:none;width:24px;height:24px;border-radius:50%;background:#fff;color:#000;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+#a2hs .ic{flex:none;width:22px;height:22px;margin-left:auto;color:#3d8bff}
+#a2hs .ah-s{font-size:12.5px;color:#6c6c6c;text-align:center;margin:-6px 0 0}
+
+
+/* Épsilon Games Studio splash: logo builds itself, then the black parts like hangar doors onto the title screen */
+#epsSplash{position:fixed;inset:0;z-index:99998;overflow:hidden;pointer-events:auto;cursor:pointer}
+#epsSplash .es-door{position:absolute;top:0;bottom:0;width:50.5%;background:#000;transition:transform 1.35s cubic-bezier(.72,0,.22,1)}
+#epsSplash .es-l{left:0;background:linear-gradient(90deg,#000 60%,#05070c);box-shadow:inset -1px 0 0 rgba(120,160,255,.06)}
+#epsSplash .es-r{right:0;background:linear-gradient(270deg,#000 60%,#05070c);box-shadow:inset 1px 0 0 rgba(120,160,255,.06)}
+#epsSplash .es-door::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.022) 79px 80px);opacity:0;transition:opacity .4s}
+#epsSplash.open .es-door::after{opacity:1}
+#epsSplash.open .es-l{transform:translateX(-101%)}
+#epsSplash.open .es-r{transform:translateX(101%)}
+#epsSplash canvas{position:absolute;inset:0;width:100%;height:100%;transition:opacity .6s}
+#epsSplash .es-glow{position:absolute;left:50%;top:50%;width:150vmax;height:150vmax;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(40,90,255,.22),rgba(70,40,200,.08) 22%,transparent 46%);opacity:0;transition:opacity .6s}
+#epsSplash .es-logo{position:absolute;left:50%;top:50%;width:min(74vw,62vh,470px);aspect-ratio:766/565;transform:translate(-50%,-50%);transition:transform .75s cubic-bezier(.5,0,.75,0),opacity .75s,filter .75s}
+#epsSplash .es-logo img{position:absolute;display:block;opacity:0;-webkit-user-drag:none;user-select:none}
+#epsSplash .es-sym{left:31.46%;top:0;width:43.21%}
+#epsSplash .es-shine{-webkit-mask-image:linear-gradient(105deg,transparent 42%,#000 50%,transparent 58%);mask-image:linear-gradient(105deg,transparent 42%,#000 50%,transparent 58%);-webkit-mask-size:300% 100%;mask-size:300% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:110% 0;mask-position:110% 0;filter:brightness(2.6) saturate(.4)}
+#epsSplash .es-word{left:0;top:69.38%;width:100%}
+#epsSplash .es-sub{left:7.57%;top:91.86%;width:84.99%}
+#epsSplash .es-line{position:absolute;left:10%;right:10%;top:88.6%;height:1px;background:linear-gradient(90deg,transparent,#3b7bff 30%,#a06bff 50%,#3b7bff 70%,transparent);transform:scaleX(0);opacity:0}
+#epsSplash .es-ring{position:absolute;left:52.9%;top:31%;width:48%;aspect-ratio:1;border-radius:50%;border:2px solid rgba(90,150,255,.8);box-shadow:0 0 24px rgba(70,120,255,.6),inset 0 0 24px rgba(70,120,255,.4);transform:translate(-50%,-50%) scale(.2);opacity:0}
+#epsSplash .es-seam{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:linear-gradient(transparent,#cfe0ff 30%,#fff 50%,#cfe0ff 70%,transparent);box-shadow:0 0 18px 4px rgba(120,170,255,.75);transform:scaleY(0);opacity:0}
+#epsSplash .es-skip{position:absolute;right:16px;bottom:max(14px,env(safe-area-inset-bottom));font:11px -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.32);opacity:0;transition:opacity .6s}
+
+#epsSplash.es-go .es-glow{opacity:1;transition-delay:.15s}
+#epsSplash.es-go .es-sym:not(.es-shine){animation:esSym 1.25s cubic-bezier(.2,.9,.25,1.15) .25s both,esPulse 2.6s ease-in-out 1.6s infinite alternate}
+#epsSplash.es-go .es-ring-x{animation:esRing 1.1s cubic-bezier(.15,.7,.3,1) 1.05s both}
+#epsSplash.es-go .es-shine-x{animation:esShine 1.1s ease-in-out 1.55s both}
+#epsSplash.es-go .es-word{animation:esWord 1s cubic-bezier(.2,.8,.2,1) 1.75s both}
+#epsSplash.es-go .es-line{animation:esLine .9s cubic-bezier(.2,.8,.2,1) 2.05s both}
+#epsSplash.es-go .es-sub{animation:esSub 1s cubic-bezier(.2,.8,.2,1) 2.45s both}
+#epsSplash.es-go .es-skip{opacity:1;transition-delay:1.4s}
+@keyframes esSym{0%{opacity:0;transform:scale(.6);filter:blur(16px) brightness(2.2)}60%{opacity:1;filter:blur(0) brightness(1.5) drop-shadow(0 0 26px rgba(60,120,255,.9))}100%{opacity:1;transform:none;filter:drop-shadow(0 0 14px rgba(60,120,255,.45))}}
+@keyframes esPulse{from{filter:drop-shadow(0 0 10px rgba(60,120,255,.35))}to{filter:drop-shadow(0 0 22px rgba(110,90,255,.6))}}
+@keyframes esRing{0%{opacity:0;transform:translate(-50%,-50%) scale(.25)}25%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(2.1)}}
+@keyframes esShine{0%{opacity:1;-webkit-mask-position:110% 0;mask-position:110% 0}100%{opacity:1;-webkit-mask-position:-10% 0;mask-position:-10% 0}}
+@keyframes esWord{0%{opacity:0;clip-path:inset(0 50% 0 50%);transform:translateY(10px);filter:blur(6px)}100%{opacity:1;clip-path:inset(0 0 0 0);transform:none;filter:none}}
+@keyframes esLine{0%{opacity:0;transform:scaleX(0)}40%{opacity:1}100%{opacity:.7;transform:scaleX(1)}}
+@keyframes esSub{0%{opacity:0;transform:scaleX(1.25);letter-spacing:.4em;filter:blur(4px)}100%{opacity:.92;transform:none;filter:none}}
+
+#epsSplash.out .es-logo{transform:translate(-50%,-50%) scale(1.18);opacity:0;filter:blur(8px) brightness(1.8)}
+#epsSplash.out .es-glow,#epsSplash.out canvas,#epsSplash.out .es-skip{opacity:0}
+#epsSplash.open .es-seam{animation:esSeam 1.1s ease-out both}
+@keyframes esSeam{0%{opacity:0;transform:scaleY(0)}25%{opacity:1;transform:scaleY(1)}100%{opacity:0;transform:scaleY(1)}}
+
+/* the title screen settles in behind the opening doors */
+#title.ttl-in .bar{animation:tiBar 1s cubic-bezier(.2,.8,.2,1) .45s both}
+#title.ttl-in h1{animation:tiH 1.2s cubic-bezier(.2,.8,.2,1) .6s both}
+#title.ttl-in .sub{animation:tiUp .9s cubic-bezier(.2,.8,.2,1) 1.05s both}
+#title.ttl-in .press{animation:tiUp .8s ease 1.5s both,blink 1.4s steps(2,jump-none) 2.3s infinite}
+#title.ttl-in .by{animation:tiUp .9s ease 1.75s both}
+@keyframes tiBar{from{opacity:0;transform:skewX(-26deg) translateX(-55vw)}}
+@keyframes tiH{from{opacity:0;transform:translateY(26px) scale(.93);filter:blur(10px)}}
+@keyframes tiUp{from{opacity:0;transform:translateY(12px)}}
+@media (prefers-reduced-motion:reduce){#epsSplash *{animation-duration:.01s!important;transition-duration:.3s!important}#title.ttl-in *{animation:none!important}}
